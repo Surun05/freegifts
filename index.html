@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Display</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      overflow: hidden; /* Prevents scrollbars */
+      background: linear-gradient(to bottom right, #800080, #4B0082);
+      color: white;
+    }
+
+    #contentContainer {
+      margin-top: 20px;
+    }
+
+    #message {
+      font-size: 36px; /* Adjust font size as needed */
+    }
+
+    #photo {
+      width: 200px;
+      height: 200px;
+      margin-top: 30px;
+      cursor: pointer;
+      display: none; /* Initially hidden */
+    }
+  </style>
+</head>
+<body>
+
+  <button id="showButton" onclick="toggleContent()">Free Gifts of 1000¥</button>
+
+  <div id="contentContainer">
+    <div id="message">Click to win free!</div>
+    <div id="photo" onclick="toggleContent()">
+      <img src="photo.jpg" alt="Photo">
+    </div>
+  </div>
+
+  <script>
+    function toggleContent() {
+      var messageElement = document.getElementById('message');
+      var photoContainer = document.getElementById('photo');
+
+      if (messageElement.style.display === 'none' || messageElement.style.display === '') {
+        messageElement.style.display = 'block';
+        photoContainer.style.display = 'none';
+      } else {
+        messageElement.style.display = 'none';
+        photoContainer.style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>
